@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="asset/favicon.ico">
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yV3slL+hCNRZdFDP8Zc+keA+Mk7uujllzyCVKoxIB0N99aKcZ9l5Tf3fSY5v5mFlC3mfFkLkLz9U/ujXRX1R7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <link rel="stylesheet" href="./style.css">
 
     <title>Contact</title>
 </head>
 <body>
-    <div class="main-container">
+    <div class="main-container contact-hiht page-transition" id="page-transition">
 
         <div class="nav-bar">
             <div class="logo">
@@ -17,6 +21,63 @@
                     <img src="./asset/Oriyomi.svg" alt="">
                 </a>
             </div>
+            <button id="hamburger" class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div id="mobileOverlay" class="mobile-overlay">
+                <button id="closeBtn" class="close-btn">&times;</button>
+                <div class="mobile-nav-links">
+                    
+                        <div class="text-links">
+                            <a href="./about Me.html">
+                                About me
+                            </a>
+                        </div>
+        
+                        <div class="text-links">
+                            <a href="./Services.html">
+                                Service
+                            </a>
+                        </div>
+        
+                        <div class="text-links">
+                            <a href="./visionandvalue.html">
+                                Vision & value
+                            </a>
+                        </div>
+        
+                        <div class="text-links">
+                            <a href="./project.html">
+                                Projects & testimonials
+                            </a>
+                        </div>
+        
+                        <div class="text-links">
+                            <a href="./contact.html">
+                                Contact
+                            </a>
+                        </div>
+                    
+                    <div class="mobile-buttons">
+                        <div class="inactve-button">
+
+                       
+                        <a href="https://drive.google.com/file/d/1WtkQ3k9ujjHISaNqOLvYq00-tZym0JoO/view?usp=sharing" target="_blank">See My Resume</a>
+                    </div>
+                    <div class="actve-button">
+
+                    <a href="./contact.html" >Hire Me!</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+
 
             <div class="right-navs">
 
@@ -72,7 +133,7 @@
 
             <div class="connnnt">
 
-                <div class="contact-from">
+                <form class="contact-from" action="https://formspree.io/f/mwplavqn" method="POST">
 
                     <div class="contact-inputfild">
                         <label for="name">Name</label>
@@ -86,14 +147,14 @@
     
                     <div class="contact-inputfild">
                         <label for="Message">Message</label>
-                        <input class="Message" id="Message" name="Message" type="text" placeholder="Write A Message">
+                        <textarea class="Message" id="Message" name="Message" type="text" placeholder="Write A Message"></textarea>
                     </div>
     
                     <Button  type="submit">Send Message</Button>
         
         
         
-                </div>
+                </form>
                
     
                 <div class="social-lins">
@@ -145,6 +206,9 @@
 
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
     
 </body>
 </html>

@@ -88,4 +88,82 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+
   
+  const hamburger = document.getElementById('hamburger');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+  
+  hamburger.addEventListener('click', () => {
+      mobileOverlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+  });
+  
+  closeBtn.addEventListener('click', () => {
+      mobileOverlay.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+  });
+  
+  // Close menu when a link is clicked
+  mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          mobileOverlay.style.display = 'none';
+          document.body.style.overflow = 'auto';
+      });
+  });
+  
+
+
+
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const form = e.target;
+  
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Thanks for your message! 🎉");
+          form.reset();
+        } else {
+          alert("Oops! Something went wrong.");
+        }
+      })
+      .catch(() => {
+        alert("Oops! Something went wrong.");
+      });
+  });
+  
+
+
+
+
+    // Fade-in on load
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("pageTransition").classList.add("active");
+      });
+    
+      // Optional: Fade-out before navigating to a new page
+      const links = document.querySelectorAll("a");
+    
+      links.forEach(link => {
+        if (link.getAttribute("target") !== "_blank") {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+            document.getElementById("pageTransition").classList.remove("active");
+            document.getElementById("pageTransition").classList.add("fade-out");
+    
+            setTimeout(() => {
+              window.location.href = href;
+            }, 500); // Match the duration of fade-out
+          });
+        }
+      });
